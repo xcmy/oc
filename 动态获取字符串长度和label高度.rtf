@@ -1,0 +1,36 @@
+{\rtf1\ansi\ansicpg936\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fmodern\fcharset0 CourierNewPSMT;}
+{\colortbl;\red255\green255\blue255;\red180\green69\blue0;\red41\green66\blue119;\red71\green106\blue151;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab864
+\pard\tx864\pardeftab864\pardirnatural
+
+\f0\fs36 \cf0 \CocoaLigature0 -(\cf2 CGSize\cf0 )boundWithSize:(\cf2 CGSize\cf0 )size  WithString:(\cf2 NSString\cf0 *)str  WithFont:(\cf2 UIFont\cf0 *)font\
+\{\
+    \cf2 NSDictionary\cf0  *attribute = \cf3 @\{\cf4 NSFontAttributeName\cf0 : font\cf3 \}\cf0 ;\
+\
+    \cf2 CGSize\cf0  retSize = [str \cf4 boundingRectWithSize\cf0 :size\
+                                       \cf4 options\cf0 :\\\
+                      \cf4 NSStringDrawingTruncatesLastVisibleLine\cf0  |\
+                      \cf4 NSStringDrawingUsesLineFragmentOrigin\cf0  |\
+                      \cf4 NSStringDrawingUsesFontLeading\cf0 \
+                                    \cf4 attributes\cf0 :attribute\
+                                       \cf4 context\cf0 :\cf3 nil\cf0 ].\cf4 size\cf0 ;\
+    \cf3 return\cf0  retSize;\
+\}\
+\
+-(\cf2 CGSize\cf0 )boundWithSize:(\cf2 CGSize\cf0 )size  WithLabel:(\cf2 UILabel\cf0 *)label\
+\{\
+    \cf2 NSDictionary\cf0  *attribute = \cf3 @\{\cf4 NSFontAttributeName\cf0 : label.\cf4 font\cf3 \}\cf0 ;\
+\
+    \cf2 CGSize\cf0  retSize = [label.\cf4 text\cf0  \cf4 boundingRectWithSize\cf0 :size\
+                                              \cf4 options\cf0 :\\\
+                      \cf4 NSStringDrawingTruncatesLastVisibleLine\cf0  |\
+                      \cf4 NSStringDrawingUsesLineFragmentOrigin\cf0  |\
+                      \cf4 NSStringDrawingUsesFontLeading\cf0 \
+                                           \cf4 attributes\cf0 :attribute\
+                                              \cf4 context\cf0 :\cf3 nil\cf0 ].\cf4 size\cf0 ;\
+\
+    \cf3 return\cf0  retSize;\
+\}}

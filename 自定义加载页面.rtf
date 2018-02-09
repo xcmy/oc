@@ -1,0 +1,57 @@
+{\rtf1\ansi\ansicpg936\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fmodern\fcharset0 CourierNewPSMT;\f1\fnil\fcharset134 STHeitiSC-Light;}
+{\colortbl;\red255\green255\blue255;\red41\green66\blue119;\red180\green69\blue0;\red195\green116\blue28;
+\red71\green106\blue151;\red223\green7\blue0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab864
+\pard\tx864\pardeftab864\pardirnatural
+
+\f0\fs36 \cf0 \CocoaLigature0 - (\cf2 void\cf0 )drawRect:(\cf3 CGRect\cf0 )rect \{\
+\cf4 //    self.backgroundColor=[UIColor whiteColor];\cf0 \
+\
+    \cf3 UILabel\cf0 *label=[[\cf3 UILabel\cf0  \cf5 alloc\cf0 ]\cf5 init\cf0 ];\
+    label.\cf5 backgroundColor\cf0 =[\cf3 UIColor\cf0  \cf5 colorWithWhite\cf0 :\cf2 0.3\cf0  \cf5 alpha\cf0 :\cf2 0.6\cf0 ];\
+    \cf4 //label.text=@"\\t
+\f1 \'d5\'fd\'d4\'da\'bc\'d3\'d4\'d8
+\f0 ";\cf0 \
+    label.\cf5 text\cf0 =[\cf3 NSString\cf0  \cf5 stringWithFormat\cf0 :\cf6 @"\\t%@"\cf0 ,\cf2 self\cf0 .\cf5 remind_L\cf0 ];\
+    \
+    label.\cf5 textColor\cf0 =[\cf3 UIColor\cf0  \cf5 colorWithWhite\cf0 :\cf2 1\cf0  \cf5 alpha\cf0 :\cf2 1\cf0 ];\
+    label.\cf5 textAlignment\cf0 =\cf5 NSTextAlignmentCenter\cf0 ;\
+    label.\cf5 bounds\cf0 =\cf5 CGRectMake\cf0 (\cf2 0\cf0 , \cf2 0\cf0 , \cf2 self\cf0 .\cf5 frame\cf0 .\cf5 size\cf0 .\cf5 width\cf0 *\cf2 0.6\cf0 , \cf2 60\cf0 );\
+    label.\cf5 layer\cf0 .\cf5 cornerRadius\cf0 =\cf2 7\cf0 ;\
+    label.\cf5 tag\cf0 =\cf2 22\cf0 ;\
+    label.\cf5 clipsToBounds\cf0 =\cf2 YES\cf0 ;\
+\
+    \cf3 UIActivityIndicatorView\cf0 *testView=[[\cf3 UIActivityIndicatorView\cf0  \cf5 alloc\cf0 ]\cf5 initWithActivityIndicatorStyle\cf0 :\cf5 UIActivityIndicatorViewStyleWhiteLarge\cf0 ];\
+    testView.\cf5 frame\cf0 =\cf5 CGRectMake\cf0 (\cf2 10\cf0 , \cf2 0\cf0 , \cf2 60\cf0 , \cf2 60\cf0 );\
+    testView.\cf5 color\cf0 =[\cf3 UIColor\cf0  \cf5 whiteColor\cf0 ];\
+    [testView \cf5 startAnimating\cf0 ];\
+    [label \cf5 addSubview\cf0 :testView];\
+\
+\
+    label.\cf5 center\cf0 =\cf2 self\cf0 .\cf5 center\cf0 ;\
+    [\cf2 self\cf0  \cf5 addSubview\cf0 :label];\
+    [\cf2 self\cf0  \cf5 performSelector\cf0 :\cf2 @selector\cf0 (chaoshi) \cf5 withObject\cf0 :\cf2 nil\cf0  \cf5 afterDelay\cf0 :\cf2 15\cf0 ];\
+\
+\}\
+-(\cf2 void\cf0 )chaoshi\
+\{\
+    \cf2 if\cf0  (\cf2 self\cf0 .\cf5 superview\cf0 ==\cf2 nil\cf0 ) \{\
+\
+    \}\cf2 else\cf0 \
+    \{\
+        [\cf2 self\cf0  \cf5 removeFromSuperview\cf0 ];\
+        \cf3 UIAlertView\cf0 *alert=[[\cf3 UIAlertView\cf0  \cf5 alloc\cf0 ]\cf5 initWithTitle\cf0 :\cf2 nil\cf0  \cf5 message\cf0 :\cf6 @"
+\f1 \'c1\'b4\'bd\'d3\'b3\'ac\'ca\'b1
+\f0 ,
+\f1 \'c7\'eb\'c9\'d4\'ba\'f2\'d4\'d9\'ca\'d4
+\f0 "\cf0  \cf5 delegate\cf0 :\cf2 self\cf0  \cf5 cancelButtonTitle\cf0 :\cf6 @"
+\f1 \'c8\'b7\'b6\'a8
+\f0 "\cf0  \cf5 otherButtonTitles\cf0 :\cf2 nil\cf0 , \cf2 nil\cf0 ];\
+        [alert \cf5 show\cf0 ];\
+    \}\
+\
+    \cf4 //[self.superview addSubview:]\cf0 \
+\
+\}}

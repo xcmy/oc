@@ -1,0 +1,68 @@
+{\rtf1\ansi\ansicpg936\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fmodern\fcharset0 CourierNewPSMT;\f1\fnil\fcharset134 STHeitiSC-Light;}
+{\colortbl;\red255\green255\blue255;\red180\green69\blue0;\red41\green66\blue119;\red71\green106\blue151;
+\red195\green116\blue28;\red223\green7\blue0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab864
+\pard\tx864\pardeftab864\pardirnatural
+
+\f0\fs36 \cf0 \CocoaLigature0 -(\cf2 NSString\cf0  *)md5:(\cf2 NSString\cf0  *)str \{\
+    \cf3 const\cf0  \cf3 char\cf0  *cStr = [str \cf4 UTF8String\cf0 ];\cf5 //
+\f1 \'d7\'aa\'bb\'bb\'b3\'c9
+\f0 utf-8\cf0 \
+    \cf3 unsigned\cf0  \cf3 char\cf0  result[\cf3 16\cf0 ];\cf5 //
+\f1 \'bf\'aa\'b1\'d9\'d2\'bb\'b8\'f6
+\f0 16
+\f1 \'d7\'d6\'bd\'da\'a3\'a8
+\f0 128
+\f1 \'ce\'bb\'a3\'ba
+\f0 md5
+\f1 \'bc\'d3\'c3\'dc\'b3\'f6\'c0\'b4\'be\'cd\'ca\'c7
+\f0 128
+\f1 \'ce\'bb
+\f0 /bit
+\f1 \'a3\'a9\'b5\'c4\'bf\'d5\'bc\'e4\'a3\'a8\'d2\'bb\'b8\'f6\'d7\'d6\'bd\'da
+\f0 =8
+\f1 \'d7\'d6\'ce\'bb
+\f0 =8
+\f1 \'b8\'f6\'b6\'fe\'bd\'f8\'d6\'c6\'ca\'fd\'a3\'a9
+\f0 \cf0 \
+    \cf4 CC_MD5\cf0 ( cStr, \cf4 strlen\cf0 (cStr), result);\
+    \cf5 /*\
+     extern unsigned char *CC_MD5(const void *data, CC_LONG len, unsigned char *md)
+\f1 \'b9\'d9\'b7\'bd\'b7\'e2\'d7\'b0\'ba\'c3\'b5\'c4\'bc\'d3\'c3\'dc\'b7\'bd\'b7\'a8
+\f0 \
+     
+\f1 \'b0\'d1
+\f0 cStr
+\f1 \'d7\'d6\'b7\'fb\'b4\'ae\'d7\'aa\'bb\'bb\'b3\'c9\'c1\'cb
+\f0 32
+\f1 \'ce\'bb\'b5\'c4
+\f0 16
+\f1 \'bd\'f8\'d6\'c6\'ca\'fd\'c1\'d0\'a3\'a8\'d5\'e2\'b8\'f6\'b9\'fd\'b3\'cc\'b2\'bb\'bf\'c9\'c4\'e6\'d7\'aa\'a3\'a9
+\f0  
+\f1 \'b4\'e6\'b4\'a2\'b5\'bd\'c1\'cb
+\f0 result
+\f1 \'d5\'e2\'b8\'f6\'bf\'d5\'bc\'e4\'d6\'d0
+\f0 \
+     */\cf0 \
+    \cf3 return\cf0  [\cf2 NSString\cf0  \cf4 stringWithFormat\cf0 :\
+            \cf6 @"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X"\cf0 ,\
+            result[\cf3 0\cf0 ], result[\cf3 1\cf0 ], result[\cf3 2\cf0 ], result[\cf3 3\cf0 ],\
+            result[\cf3 4\cf0 ], result[\cf3 5\cf0 ], result[\cf3 6\cf0 ], result[\cf3 7\cf0 ],\
+            result[\cf3 8\cf0 ], result[\cf3 9\cf0 ], result[\cf3 10\cf0 ], result[\cf3 11\cf0 ],\
+            result[\cf3 12\cf0 ], result[\cf3 13\cf0 ], result[\cf3 14\cf0 ], result[\cf3 15\cf0 ]\
+            ];\
+    \cf5 /*\
+     x
+\f1 \'b1\'ed\'ca\'be\'ca\'ae\'c1\'f9\'bd\'f8\'d6\'c6\'a3\'ac
+\f0 %02X  
+\f1 \'d2\'e2\'cb\'bc\'ca\'c7\'b2\'bb\'d7\'e3\'c1\'bd\'ce\'bb\'bd\'ab\'d3\'c3
+\f0 0
+\f1 \'b2\'b9\'c6\'eb\'a3\'ac\'c8\'e7\'b9\'fb\'b6\'e0\'d3\'e0\'c1\'bd\'ce\'bb\'d4\'f2\'b2\'bb\'d3\'b0\'cf\'ec
+\f0 \
+     NSLog("%02X", 0x888);  //888\
+     NSLog("%02X", 0x4); //04\
+     */\cf0 \
+\}\
+}

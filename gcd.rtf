@@ -1,0 +1,80 @@
+{\rtf1\ansi\ansicpg936\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fmodern\fcharset0 CourierNewPSMT;\f1\fnil\fcharset134 STHeitiSC-Light;}
+{\colortbl;\red255\green255\blue255;\red195\green116\blue28;\red41\green66\blue119;\red180\green69\blue0;
+\red100\green100\blue133;\red71\green106\blue151;\red223\green7\blue0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww20940\viewh14500\viewkind0
+\deftab864
+\pard\tx864\pardeftab864\pardirnatural
+
+\f0\fs36 \cf0 \CocoaLigature0    \cf2 //
+\f1 \'d6\'bb\'d6\'b4\'d0\'d0\'d2\'bb\'b4\'ce
+\f0 \cf0 \
+    \cf3 static\cf0  \cf4 dispatch_once_t\cf0  once;\
+    \cf5 dispatch_once\cf0 (&once, ^\{\
+        \cf2 //NSLog(@"once");\cf0 \
+    \});\
+\
+    \cf2 //
+\f1 \'d1\'d3\'b3\'d9\'d6\'b4\'d0\'d0
+\f0 \cf0 \
+    \cf3 double\cf0  delay_s=\cf3 2.0\cf0 ;\
+    \cf4 dispatch_time_t\cf0  poptime=\cf6 dispatch_time\cf0 (\cf5 DISPATCH_TIME_NOW\cf0 , delay_s*\cf5 NSEC_PER_SEC\cf0 );\
+    \cf6 dispatch_after\cf0 (poptime, \cf6 dispatch_get_main_queue\cf0 (), ^\{\
+        \cf2 //NSLog(@"
+\f1 \'d1\'d3\'ca\'b1\'c1\'bd\'c3\'eb
+\f0 ");\cf0 \
+    \});\
+\
+\
+    \cf2 //
+\f1 \'b2\'a2\'b7\'a2\'ca\'c2\'bc\'fe
+\f0 \cf0 \
+    \cf4 dispatch_group_t\cf0  group=\cf6 dispatch_group_create\cf0 ();\
+    \cf6 dispatch_group_async\cf0 (group, \cf6 dispatch_get_global_queue\cf0 (\cf3 0\cf0 , \cf3 0\cf0 ), ^\{\
+        \cf2 //NSLog(@"1");\cf0 \
+    \});\
+    \cf6 dispatch_group_async\cf0 (group, \cf6 dispatch_get_global_queue\cf0 (\cf3 0\cf0 , \cf3 0\cf0 ), ^\{\
+        \cf2 //NSLog(@"2");\cf0 \
+    \});\
+    \cf6 dispatch_group_async\cf0 (group, \cf6 dispatch_get_global_queue\cf0 (\cf3 0\cf0 , \cf3 0\cf0 ), ^\{\
+        \cf2 //NSLog(@"3");\cf0 \
+    \});\
+\
+\
+   \cf2 //
+\f1 \'d3\'c5\'cf\'c8\'bc\'b6
+\f0 \cf0 \
+    \cf4 dispatch_queue_t\cf0  queue=\cf6 dispatch_get_global_queue\cf0 (\cf5 DISPATCH_QUEUE_PRIORITY_DEFAULT\cf0 , \cf3 0\cf0 );\
+    \cf4 dispatch_queue_t\cf0  queue1=\cf6 dispatch_get_global_queue\cf0 (\cf5 DISPATCH_QUEUE_PRIORITY_HIGH\cf0 , \cf3 0\cf0 );\
+\
+    \cf6 dispatch_group_async\cf0 (group, queue, ^\{\
+        \cf6 NSLog\cf0 (\cf7 @"1"\cf0 );\
+    \});\
+    \cf6 dispatch_group_async\cf0 (group, queue1, ^\{\
+        \cf2 //[NSThread sleepForTimeInterval:2];\cf0 \
+        \cf6 NSLog\cf0 (\cf7 @"2"\cf0 );\
+    \});\
+\
+\
+\
+\
+    \cf2 //
+\f1 \'ba\'c4\'ca\'b1\'b2\'d9\'d7\'f7
+\f0 \cf0 \
+\
+    \cf6 dispatch_async\cf0 (\cf6 dispatch_get_global_queue\cf0 (\cf5 DISPATCH_QUEUE_PRIORITY_DEFAULT\cf0 , \cf3 0\cf0 ), ^\{\
+        \cf2 //UIImage*image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"imagePathUrl"]]];\cf0 \
+        \cf6 dispatch_async\cf0 (\cf6 dispatch_get_main_queue\cf0 (), ^\{\
+           \cf2 // NSLog(@"%f",image.size.height);\cf0 \
+        \});\
+    \});\
+\
+\
+\
+    \cf2 //
+\f1 \'d6\'b4\'d0\'d0\'b6\'e0\'b4\'ce
+\f0 \cf0 \
+    \cf4 dispatch_queue_t\cf0  globalQ = \cf6 dispatch_get_global_queue\cf0 (\cf5 DISPATCH_QUEUE_PRIORITY_DEFAULT\cf0 , \cf3 0\cf0 );\
+    \cf6 dispatch_apply\cf0 (\cf3 5\cf0 , globalQ, ^(\cf4 size_t\cf0  index) \{\
+        \cf2 //NSLog(@"1");\cf0 \
+    \});}

@@ -1,0 +1,46 @@
+{\rtf1\ansi\ansicpg936\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fmodern\fcharset0 CourierNewPSMT;}
+{\colortbl;\red255\green255\blue255;\red41\green66\blue119;\red180\green69\blue0;\red71\green106\blue151;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab864
+\pard\tx864\pardeftab864\pardirnatural
+
+\f0\fs36 \cf0 \CocoaLigature0 - (\cf2 void\cf0 )drawRect:(\cf3 CGRect\cf0 )rect \{\
+\
+\
+    \cf4 _label\cf0 =[[\cf3 UILabel\cf0  \cf4 alloc\cf0 ]\cf4 init\cf0 ];\
+    \cf4 _label\cf0 .\cf4 backgroundColor\cf0 =[\cf3 UIColor\cf0  \cf4 colorWithWhite\cf0 :\cf2 0.3\cf0  \cf4 alpha\cf0 :\cf2 0.6\cf0 ];\
+    \cf4 _label\cf0 .\cf4 text\cf0 =\cf2 self\cf0 .\cf4 tishi\cf0 ;\
+    \cf4 _label\cf0 .\cf4 textColor\cf0 =[\cf3 UIColor\cf0  \cf4 colorWithWhite\cf0 :\cf2 1\cf0  \cf4 alpha\cf0 :\cf2 1\cf0 ];\
+    \cf4 _label\cf0 .\cf4 textAlignment\cf0 =\cf4 NSTextAlignmentCenter\cf0 ;\
+    \cf4 _label\cf0 .\cf4 numberOfLines\cf0 =\cf2 0\cf0 ;\
+       \cf4 _label\cf0 .\cf4 layer\cf0 .\cf4 cornerRadius\cf0 =\cf2 10\cf0 ;\
+    \cf4 _label\cf0 .\cf4 clipsToBounds\cf0 =\cf2 YES\cf0 ;\
+    \cf4 _label\cf0 .\cf4 frame\cf0 =\cf4 CGRectMake\cf0 (\cf2 self\cf0 .\cf4 frame\cf0 .\cf4 size\cf0 .\cf4 width\cf0 /\cf2 5\cf0 , \cf2 self\cf0 .\cf4 frame\cf0 .\cf4 size\cf0 .\cf4 height\cf0 *\cf2 0.8\cf0 , \cf2 self\cf0 .\cf4 frame\cf0 .\cf4 size\cf0 .\cf4 width\cf0 *\cf2 0.6\cf0 , \cf2 50\cf0 );\
+    \cf2 if\cf0  (\cf2 self\cf0 .\cf4 tishi\cf0 .\cf4 length\cf0 >\cf2 10\cf0 ) \{\
+        \cf4 _label\cf0 .\cf4 frame\cf0 =\cf4 CGRectMake\cf0 (\cf2 self\cf0 .\cf4 frame\cf0 .\cf4 size\cf0 .\cf4 width\cf0 /\cf2 10\cf0 , \cf2 self\cf0 .\cf4 frame\cf0 .\cf4 size\cf0 .\cf4 height\cf0 *\cf2 0.8\cf0 , \cf2 self\cf0 .\cf4 frame\cf0 .\cf4 size\cf0 .\cf4 width\cf0 *\cf2 0.8\cf0 , \cf2 50\cf0 );\
+    \}\
+    [\cf2 self\cf0  \cf4 addSubview\cf0 :\cf4 _label\cf0 ];\
+\
+   \
+\
+    [\cf2 self\cf0  \cf4 performSelector\cf0 :\cf2 @selector\cf0 (yanshi) \cf4 withObject\cf0 :\cf2 nil\cf0  \cf4 afterDelay\cf0 :\cf2 2.2\cf0 ];\
+     \
+\}\
+-(\cf2 void\cf0 )yanshi\
+\{\
+    \cf2 if\cf0  (\cf2 self\cf0 .\cf4 superview\cf0 ==\cf2 nil\cf0 ) \{\
+\
+    \}\cf2 else\cf0 \
+    \{\
+        [\cf3 UIView\cf0  \cf4 animateWithDuration\cf0 :\cf2 1\cf0  \cf4 animations\cf0 :^\{\
+            \cf4 _label\cf0 .\cf4 alpha\cf0 =\cf2 0\cf0 ;\
+        \} \cf4 completion\cf0 :^(\cf2 BOOL\cf0  finished) \{\
+            [\cf2 self\cf0  \cf4 removeFromSuperview\cf0 ];\
+        \}];\
+\
+       \
+    \}\
+\
+\}}

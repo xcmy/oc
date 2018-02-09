@@ -1,0 +1,60 @@
+{\rtf1\ansi\ansicpg936\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fnil\fcharset134 STHeitiSC-Light;\f1\fmodern\fcharset0 CourierNewPSMT;\f2\fnil\fcharset0 HelveticaNeue;
+}
+{\colortbl;\red255\green255\blue255;\red217\green11\blue0;\red71\green106\blue151;\red41\green66\blue119;
+\red254\green112\blue56;\red180\green69\blue0;\red100\green100\blue133;\red223\green7\blue0;\red255\green39\blue18;
+\red255\green255\blue255;\red38\green38\blue38;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab864
+\pard\tx864\pardeftab864\pardirnatural
+
+\f0\fs36 \cf2 \CocoaLigature0 \'d7\'a2\'d2\'e2\'ca\'c2\'cf\'ee\'a3\'ba
+\f1 \cf0 \
+ \cf3 _webH\cf0 =\cf4 1\cf0 ;
+\f0 \cf5 //\'b1\'d8\'d0\'eb\'b8\'f8\'c9\'e8\'b6\'a8\'b3\'f5\'ca\'bc\'d6\'b5\
+\
+\
+\pard\tx864\pardeftab864\pardirnatural
+
+\f1 \cf6 UIWebView\cf0 *web=[[\cf6 UIWebView\cf0  \cf3 alloc\cf0 ]\cf3 initWithFrame\cf0 :\cf3 CGRectMake\cf0 (\cf4 0\cf0 , \cf4 45\cf0 , \cf3 _width\cf0 ,\cf3 _webH\cf0 )];\
+            [web \cf3 loadRequest\cf0 :[\cf6 NSURLRequest\cf0  \cf3 requestWithURL\cf0 :[\cf6 NSURL\cf0  \cf3 URLWithString\cf0 :\cf7 PRODUCT_URL_SKU\cf0 (\cf4 self\cf0 .productId)]]];\
+            web.\cf3 scalesPageToFit\cf0 =\cf4 YES\cf0 ;\
+            web.\cf3 userInteractionEnabled\cf0 =\cf4 NO\cf0 ;\
+            web.\cf3 scrollView\cf0 .\cf3 scrollEnabled\cf0 =\cf4 NO\cf0 ;\
+            web.\cf3 delegate\cf0 =\cf4 self\cf0 ;\
+            [cell.\cf3 contentView\cf0  \cf3 addSubview\cf0 :web];\
+\
+\
+\
+\
+-(\cf4 void\cf0 )webViewDidFinishLoad:(\cf6 UIWebView\cf0  *)webView\
+\{\
+\
+    \cf3 NSLog\cf0 (\cf8 @"hh=======%f"\cf0 ,\cf3 _webH\cf0 );\
+\
+    \cf6 CGFloat\cf0  documentHeight = [[webView \cf3 stringByEvaluatingJavaScriptFromString\cf0 :\cf8 @"document.getElementById(\\"content\\").offsetHeight;"\cf0 ] \cf3 floatValue\cf0 ];\
+\
+    \cf3 _webH\cf0 =(\cf4 float\cf0 )documentHeight+\cf4 20\cf0 ;\
+    webView.\cf3 frame\cf0 =\cf3 CGRectMake\cf0 (\cf4 0\cf0 , \cf4 45\cf0 , \cf3 _width\cf0 , \cf3 _webH\cf0 );\
+\
+\
+    [\cf3 _tableView\cf0  \cf3 beginUpdates\cf0 ];\
+\
+    [\cf3 _tableView\cf0  \cf3 endUpdates\cf0 ];\
+\
+\}\
+\
+\
+\
+\pard\pardeftab720\sl480
+
+\f0\fs48 \cf9 \cb10 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \outl0\strokewidth0 \strokec11 \'b6\'a8\'d2\'e5\'d2\'bb\'b8\'f6\'d7\'a8\'c3\'c5\'b5\'c4
+\f2 cell
+\f0 \'a3\'ac\'b3\'d6\'d3\'d0
+\f2 webview
+\f0 \'a3\'ac
+\f2 webview
+\f0 \'b5\'c4
+\f2 loadrequest
+\f0 \'d2\'b2\'ca\'c7\'b1\'c8\'bd\'cf\'ba\'c4\'d7\'ca\'d4\'b4\'b5\'c4}

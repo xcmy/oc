@@ -1,0 +1,41 @@
+{\rtf1\ansi\ansicpg936\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fmodern\fcharset0 CourierNewPSMT;}
+{\colortbl;\red255\green255\blue255;\red41\green66\blue119;\red180\green69\blue0;\red223\green7\blue0;
+\red71\green106\blue151;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab864
+\pard\tx864\pardeftab864\pardirnatural
+
+\f0\fs36 \cf0 \CocoaLigature0 + (\cf2 BOOL\cf0 ) validateEmail:(\cf3 NSString\cf0  *)email\
+\{\
+    \cf3 NSString\cf0  *emailRegex = \cf4 @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\\\.[A-Za-z]\{2,4\}"\cf0 ;\
+    \cf3 NSPredicate\cf0  *emailTest = [\cf3 NSPredicate\cf0  \cf5 predicateWithFormat\cf0 :\cf4 @"SELF MATCHES %@"\cf0 , emailRegex];\
+    \cf2 return\cf0  [emailTest \cf5 evaluateWithObject\cf0 :email];\
+\}\
+\
++ (\cf2 BOOL\cf0 ) validateMobile:(\cf3 NSString\cf0  *)mobile\
+\{\
+\
+    \cf3 NSString\cf0  *phoneRegex = \cf4 @"^((13[0-9])|(15[^4,\\\\D])|(18[0,0-9]))\\\\d\{8\}$"\cf0 ;\
+    \cf3 NSPredicate\cf0  *phoneTest = [\cf3 NSPredicate\cf0  \cf5 predicateWithFormat\cf0 :\cf4 @"SELF MATCHES %@"\cf0 ,phoneRegex];\
+    \cf2 return\cf0  [phoneTest \cf5 evaluateWithObject\cf0 :mobile];\
+\}\
++ (\cf2 BOOL\cf0 ) validateIdentityCard: (\cf3 NSString\cf0  *)identityCard\
+\{\
+    \cf2 BOOL\cf0  flag;\
+    \cf2 if\cf0  (identityCard.\cf5 length\cf0  <= \cf2 0\cf0 ) \{\
+        flag = \cf2 NO\cf0 ;\
+        \cf2 return\cf0  flag;\
+    \}\
+    \cf3 NSString\cf0  *regex2 = \cf4 @"^(\\\\d\{17\})(\\\\d|[xX])$"\cf0 ;\
+\
+    \cf3 NSPredicate\cf0  *identityCardPredicate = [\cf3 NSPredicate\cf0  \cf5 predicateWithFormat\cf0 :\cf4 @"SELF MATCHES %@"\cf0 ,regex2];\
+    \cf2 return\cf0  [identityCardPredicate \cf5 evaluateWithObject\cf0 :identityCard];\
+\}\
++ (\cf2 BOOL\cf0 ) validateBusinessId:(\cf3 NSString\cf0  *)businessId\
+\{\
+\
+    \cf3 NSString\cf0  *businessIdRegex = \cf4 @"^(\\\\d\{15\})"\cf0 ;\
+    \cf3 NSPredicate\cf0  *businessIdTest = [\cf3 NSPredicate\cf0  \cf5 predicateWithFormat\cf0 :\cf4 @"SELF MATCHES %@"\cf0 ,businessIdRegex];\
+    \cf2 return\cf0  [businessIdTest \cf5 evaluateWithObject\cf0 :businessId];\
+\}}

@@ -1,0 +1,59 @@
+{\rtf1\ansi\ansicpg936\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fmodern\fcharset0 CourierNewPSMT;\f1\fnil\fcharset134 STHeitiSC-Light;}
+{\colortbl;\red255\green255\blue255;\red180\green69\blue0;\red71\green106\blue151;\red223\green7\blue0;
+\red195\green116\blue28;\red41\green66\blue119;\red100\green100\blue133;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab864
+\pard\tx864\pardeftab864\pardirnatural
+
+\f0\fs36 \cf2 \CocoaLigature0 UITabBarController\cf0 *tabBarC=[[\cf2 UITabBarController\cf0  \cf3 alloc\cf0 ]\cf3 init\cf0 ];\
+\
+\
+    \cf2 classVC\cf0 *vc1=[[\cf2 classVC\cf0  \cf3 alloc\cf0 ]\cf3 init\cf0 ];\
+    \cf2 UINavigationController\cf0 *nav1=[[\cf2 UINavigationController\cf0  \cf3 alloc\cf0 ]\cf3 initWithRootViewController\cf0 :vc1];\
+    nav1.\cf3 tabBarItem\cf0 .\cf3 title\cf0 =\cf4 @"
+\f1 \'b7\'d6\'c0\'e0
+\f0 "\cf0 ;\
+    nav1.\cf3 tabBarItem\cf0 .\cf3 image\cf0 =[\cf2 UIImage\cf0  \cf3 imageNamed\cf0 :\cf4 @"img5"\cf0 ];\
+\
+\
+    \cf2 scoreVC\cf0 *vc2=[[\cf2 scoreVC\cf0  \cf3 alloc\cf0 ]\cf3 init\cf0 ];\
+    \cf2 UINavigationController\cf0 *nav2=[[\cf2 UINavigationController\cf0  \cf3 alloc\cf0 ]\cf3 initWithRootViewController\cf0 :vc2];\
+    nav2.\cf3 tabBarItem\cf0 .\cf3 title\cf0 =\cf4 @"
+\f1 \'bb\'fd\'b7\'d6\'c9\'cc\'b3\'c7
+\f0 "\cf0 ;\
+    nav2.\cf3 tabBarItem\cf0 .\cf3 image\cf0 =[\cf2 UIImage\cf0  \cf3 imageNamed\cf0 :\cf4 @"tab_score_shop_nor"\cf0 ];\
+\
+    \cf2 firstPage\cf0 *vc3=[[\cf2 firstPage\cf0  \cf3 alloc\cf0 ]\cf3 init\cf0 ];\
+    \cf2 UINavigationController\cf0 *nav3=[[\cf2 UINavigationController\cf0  \cf3 alloc\cf0 ]\cf3 initWithRootViewController\cf0 :vc3];\
+   \cf5 //nav3.tabBarItem.title=@"
+\f1 \'d6\'f7\'d2\'b3
+\f0 ";\cf0 \
+    nav3.\cf3 tabBarItem\cf0 .\cf3 image\cf0 =[[\cf2 UIImage\cf0  \cf3 imageNamed\cf0 :\cf4 @"tab_index"\cf0 ] \cf3 imageWithRenderingMode\cf0 :\cf3 UIImageRenderingModeAlwaysOriginal\cf0 ];\
+    nav3.\cf3 tabBarItem\cf0 .\cf3 imageInsets\cf0 =\cf3 UIEdgeInsetsMake\cf0 (\cf6 6\cf0 , \cf6 0\cf0 , -\cf6 6\cf0 , \cf6 0\cf0 );\
+\
+    \cf2 shopListVC\cf0 *vc4=[[\cf2 shopListVC\cf0  \cf3 alloc\cf0 ]\cf3 init\cf0 ];\
+    \cf2 UINavigationController\cf0 *nav4=[[\cf2 UINavigationController\cf0  \cf3 alloc\cf0 ]\cf3 initWithRootViewController\cf0 :vc4];\
+    nav4.\cf3 tabBarItem\cf0 .\cf3 title\cf0 =\cf4 @"
+\f1 \'d7\'c9\'d1\'af\'b7\'fe\'ce\'f1
+\f0 "\cf0 ;\
+    nav4.\cf3 tabBarItem\cf0 .\cf3 image\cf0 =[\cf2 UIImage\cf0  \cf3 imageNamed\cf0 :\cf4 @"tab_more_nor"\cf0 ];\
+\
+    \cf2 personCenter\cf0 *vc5=[[\cf2 personCenter\cf0  \cf3 alloc\cf0 ]\cf3 init\cf0 ];\
+    \cf2 UINavigationController\cf0 *nav5=[[\cf2 UINavigationController\cf0  \cf3 alloc\cf0 ]\cf3 initWithRootViewController\cf0 :vc5];\
+    nav5.\cf3 tabBarItem\cf0 .\cf3 title\cf0 =\cf4 @"
+\f1 \'b8\'f6\'c8\'cb\'d6\'d0\'d0\'c4
+\f0 "\cf0 ;\
+    nav5.\cf3 tabBarItem\cf0 .\cf3 image\cf0 =[\cf2 UIImage\cf0  \cf3 imageNamed\cf0 :\cf4 @"img4"\cf0 ];\
+\
+\
+\
+    tabBarC.\cf3 viewControllers\cf0 =\cf6 @[\cf0 nav1,nav2,nav3,nav4,nav5\cf6 ]\cf0 ;\
+    tabBarC.\cf3 selectedIndex\cf0 =\cf6 2\cf0 ;\
+\
+    tabBarC.\cf3 tabBar\cf0 .\cf3 tintColor\cf0 =\cf7 APP_ClOUR\cf0 ;\
+\
+\
+\
+    [\cf2 UIApplication\cf0  \cf3 sharedApplication\cf0 ].\cf3 keyWindow\cf0 .\cf3 rootViewController\cf0 =tabBarC;\
+}

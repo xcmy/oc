@@ -1,0 +1,71 @@
+{\rtf1\ansi\ansicpg936\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fmodern\fcharset0 CourierNewPSMT;\f1\fmodern\fcharset0 CourierNewPS-BoldMT;\f2\fnil\fcharset134 STHeitiSC-Light;
+}
+{\colortbl;\red255\green255\blue255;\red255\green39\blue18;\red41\green66\blue119;\red180\green69\blue0;
+\red71\green106\blue151;\red100\green100\blue133;\red223\green7\blue0;\red217\green11\blue0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww19180\viewh11380\viewkind0
+\deftab864
+\pard\tx864\pardeftab864\pardirnatural
+
+\f0\fs36 \cf0 \CocoaLigature0 \
+
+\f1\b \cf2 get:
+\f0\b0 \cf0 \
++(\cf3 void\cf0 )getData:(\cf4 NSString\cf0 *)urlString complete:(\cf3 void\cf0 (^)(\cf4 NSDictionary\cf0 *dic))block;\
+\{\
+    \cf4 NSURL\cf0 *url=[\cf4 NSURL\cf0  \cf5 URLWithString\cf0 :[urlString \cf5 stringByAddingPercentEscapesUsingEncoding\cf0 :\cf5 NSUTF8StringEncoding\cf0 ]];\
+\
+    \cf4 NSURLRequest\cf0 *request=[\cf4 NSURLRequest\cf0  \cf5 requestWithURL\cf0 :url];\
+\
+    \cf4 AFHTTPRequestOperation\cf0 *operation=[[\cf4 AFHTTPRequestOperation\cf0  \cf5 alloc\cf0 ]\cf5 initWithRequest\cf0 :request];\
+\
+    [operation \cf5 setCompletionBlockWithSuccess\cf0 :^(\cf4 AFHTTPRequestOperation\cf0  *operation, \cf3 id\cf0  responseObject) \{\
+        \cf4 NSDictionary\cf0 *dic=[\cf4 NSJSONSerialization\cf0  \cf5 JSONObjectWithData\cf0 :[operation.\cf5 responseString\cf0  \cf5 dataUsingEncoding\cf0 :\cf5 NSUTF8StringEncoding\cf0 ] \cf5 options\cf0 :\cf5 NSJSONReadingMutableLeaves\cf0  \cf5 error\cf0 :\cf3 nil\cf0 ];\
+\
+        block(dic);\
+\
+    \} \cf5 failure\cf0 :^(\cf4 AFHTTPRequestOperation\cf0  *operation, \cf4 NSError\cf0  *error) \{\
+\
+        \cf4 NSDictionary\cf0 *dic=\cf3 @\{\}\cf0 ;\
+        block(dic);\
+        \cf6 ALERT\cf0 (\cf7 @"
+\f2 \'cd\'f8\'c2\'e7\'b7\'b1\'c3\'a6\'a3\'ac\'c7\'eb\'c9\'d4\'ba\'f3\'d4\'d9\'ca\'d4
+\f0 "\cf0 )\
+\
+    \}];\
+\
+    \cf4 NSOperationQueue\cf0 *queue=[[\cf4 NSOperationQueue\cf0  \cf5 alloc\cf0 ]\cf5 init\cf0 ];\
+    [queue \cf5 addOperation\cf0 :operation];\
+\
+\
+\}\
+\
+\
+\
+
+\f1\b \cf8 POST:
+\f0\b0 \cf0 \
+     \cf4 AFHTTPRequestOperationManager\cf0 *manger=[\cf4 AFHTTPRequestOperationManager\cf0  \cf5 manager\cf0 ];\
+ \
+     \cf4 NSString\cf0 *str=[\cf4 NSString\cf0  \cf5 stringWithFormat\cf0 :\cf7 @"%@/story/all.action?"\cf0  ,\cf6 BASE_URL\cf0 ];\
+\
+      \cf4 NSDictionary\cf0  *parameter=\cf3 @\{\cf7 @"storyId"\cf0 :storyId,\cf7 @"imageSize"\cf0 :[\cf4 NSString\cf0  \cf5 stringWithFormat\cf0 :\cf7 @"%lu"\cf0 ,(\cf3 unsigned\cf0  \cf3 long\cf0 )\cf5 _imageArray\cf0 .\cf5 count\cf0 ],\cf7 @"storyPath"\cf0 : string,\cf7 @"type"\cf0 :\cf7 @"4"\cf3 \}\cf0 ;\
+\
+            \
+\
+      manger.\cf5 responseSerializer\cf0 .\cf5 acceptableContentTypes\cf0 =[\cf4 NSSet\cf0  \cf5 setWithObject\cf0 :\cf7 @"text/html"\cf0 ];\
+\
+\
+                        \
+      [manger \cf5 POST\cf0 :str \cf5 parameters\cf0 :parameter \cf5 success\cf0 :^(\cf4 AFHTTPRequestOperation\cf0  *operation, \cf3 id\cf0  responseObject) \{\
+               \
+  \
+\
+      \} \cf5 failure\cf0 :^(\cf4 AFHTTPRequestOperation\cf0  *operation, \cf4 NSError\cf0  *error) \{\
+              \
+\
+      \}];\
+\
+        \
+ \
+}
